@@ -13,148 +13,99 @@
 <body>
 
 
-<header>
-
-<div class="logo">
-Eco<span>Cart</span>
-</div>
+<div class="container">
 
 
-<nav>
+<h1>
+Online Shopping Experience
+</h1>
 
-<a href="index.html">Home</a>
-
-<a href="random.html">Shop</a>
-
-</nav>
-
-
-</header>
-
-
-
-
-<section class="consent">
-
-<h1>Participant Information and Consent</h1>
-
-  <p>
-Thank you for taking part in this study.
-  </p>
 
 <p>
-In this task, you will be asked to browse a simulated online shopping website and answer a survey, imagining that you are considering purchasing a product. 
-Please interact with the website as you normally would when shopping online. You will interact with the simulated website and be asked to buy products with different shipping options.  
+You will take part in a simulated online shopping experience.
+Please imagine you are making a real purchase and choose the options you would normally prefer.
 </p>
+
 
 <p>
-During the task, you will:
+No payment is required. Your responses will be used for research purposes.
 </p>
 
-<ul>
-<li>Browse the available products.</li>
-<li>Select a product that you would consider purchasing.</li> 
-<li>Review the delivery options available at checkout.</li>
-<li>Choose the delivery option you would prefer.</li>
-<li>Complete a form with your preferences and answer questions about your experience.</li>
-</ul>
 
-<p>
-You are invited to take part in a research study exploring how delivery options and website design influence online shopping decisions.
-</p>
+<label>
 
-<p>
-Participation is voluntary. You may stop at any time before submitting your responses.
-</p>
+<input type="checkbox" id="consent">
 
-<p>
-No personally identifiable information will be collected. Responses will be used solely for academic research purposes.
-</p>
+I agree to participate in this study.
 
-<p>
-The study should take approximately 3–5 minutes to complete.
-</p>
-
-<p>
-By clicking "I Agree and Start", you confirm that:
-</p>
-
-<ul>
-<li>You are at least 18 years old.</li>
-<li>You have read the information above.</li>
-<li>You voluntarily agree to participate.</li>
-<li>Your data will be stored for 10 years.</li>  
-</ul>
-
-  <label>
-<input type="checkbox" required>
-I have read the information above and agree to participate.
 </label>
 
-<a class="btn" href="random.html">
-I Agree and Start
-</a>
 
-</section>
-
-</section>
+<br><br>
 
 
+<button class="btn" onclick="startExperiment()">
 
-<section class="features">
+Start Shopping
 
+</button>
 
-<div>
-
-<h2>
-🌱 Sustainable Delivery
-</h2>
-
-<p>
-Lower impact delivery choices.
-</p>
 
 </div>
 
 
 
-<div>
-
-<h2>
-🚚 Delivery Decisions
-</h2>
-
-<p>
-Understanding consumer behaviour.
-</p>
-
-</div>
+<script>
 
 
-
-<div>
-
-<h2>
-🔒 Research Study
-</h2>
-
-<p>
-Anonymous participation.
-</p>
-
-</div>
-
-  
+function startExperiment(){
 
 
-</section>
+let consent =
+document.getElementById("consent").checked;
 
 
-<footer>
+if(!consent){
 
-EcoCart Research
+alert("Please provide consent before continuing.");
 
-</footer>
+return;
+
+}
+
+
+
+let checkoutPages=[
+
+
+"checkout1.html",
+
+"checkout2.html",
+
+"checkout3.html",
+
+"checkout4.html"
+
+
+];
+
+
+
+let randomCheckout =
+
+checkoutPages[
+Math.floor(Math.random()*checkoutPages.length)
+];
+
+
+
+window.location.href=randomCheckout;
+
+
+}
+
+
+</script>
 
 
 </body>
